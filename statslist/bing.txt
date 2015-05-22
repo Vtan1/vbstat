@@ -1,0 +1,54 @@
+Binghamton:
+OHs:
+	3, Kristin Hovie
+		k/s: 2.08
+		at/s: 7.32
+		28.4% k
+		b/s: 
+		64.29% serve
+		38.10% ace
+	4, Allison Hovie
+	   	k/s: 3.21
+		at/s: 9.42
+		34.08% k
+		86.11% serve
+		5.56% ace
+	9, Mirei Kato
+	   	k/s: 0
+		at/s: 0.33
+		0% k
+		no serves
+	12, Kelly Leach
+	    	k/s: 0.98
+		at/s: 4.43
+		22.12% k
+		72.72% serve
+		9.09% ace
+MHs:
+	11, Bianca Anderson
+    	    	k/s: 1.25
+		at/s: 3.65
+		34.25% k
+		no serves
+	14, Kristella Morina
+	    	k/s: 0.76
+		at/s: 2.48
+		30.65% k
+		no serves
+	16, Alexis LaGoy
+	    	k/s: 2.20
+		at/s: 5.11
+		43.05% k
+		84.40% serve
+		10.09% ace
+Setters:
+	15, Amanda Dettmann
+	    	a/s: 9.26
+		a at/s: 
+	17, Sarah Ngo
+	21, Alexa Zbytniewski
+Libero/DSs:
+	10, Bailey Walker (lib)
+	1, Kasey Muchnicki
+	12, Kelly Leach
+	21, Alexa Zbytniewski
