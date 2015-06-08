@@ -1,0 +1,10 @@
+import java.util.*;
+import java.io.*;
+
+public class Base {
+    private double ks;
+    private double kats;
+    private double bs;
+    private double bats;
+
+    

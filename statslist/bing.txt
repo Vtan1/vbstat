@@ -15,26 +15,11 @@ OHs:
 		34.08% k
 		86.11% serve
 		5.56% ace
-	9, Mirei Kato
-	   	k/s: 0
-		at/s: 0.33
-		0% k
-		no serves
-	12, Kelly Leach
-	    	k/s: 0.98
-		at/s: 4.43
-		22.12% k
-		72.72% serve
-		9.09% ace
 MHs:
 	11, Bianca Anderson
     	    	k/s: 1.25
 		at/s: 3.65
 		34.25% k
-	14, Kristella Morina
-	    	k/s: 0.76
-		at/s: 2.48
-		30.65% k
 	16, Alexis LaGoy
 	    	k/s: 2.20
 		at/s: 5.11
@@ -47,6 +32,3 @@ Setters:
 	21, Alexa Zbytniewski
 Libero/DSs:
 	10, Bailey Walker (lib)
-	1, Kasey Muchnicki
-	12, Kelly Leach
-	21, Alexa Zbytniewski
