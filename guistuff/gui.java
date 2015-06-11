@@ -6,9 +6,10 @@ import java.awt.event.*;
 import javax.swing.*;
 import java.io.File;
 
-public class gui extends JFrame {
+public class gui extends JFrame implements ActionListener {
     private JPanel stats1,stats2;
     private Container volley;
+    private JButton submit;
     private JLabel team1,team2;
     //these are for the first team
     private JTextArea xok1,xok2,xoa1,xoa2,xmk1,xmk2,xma1,xma2,xss1,xss2,xsa1,xsa2,xld;
@@ -29,11 +30,8 @@ public class gui extends JFrame {
 	volley = getContentPane();
 	volley.setLayout(new BoxLayout(volley, BoxLayout.X_AXIS));
 	setVisible(true);
-	/*
-	overallpane = getContentPane();
-	overallpane.setLayout(new BoxLayout(overallpane, BoxLayout.X_AXIS));
-	setVisible(true);
-	*/
+
+
 	stats1 = new JPanel();
        	stats1.setLayout(new BoxLayout(stats1, BoxLayout.Y_AXIS));
 	volley.add(stats1);
@@ -131,6 +129,21 @@ public class gui extends JFrame {
 	blank11.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 	stats1.add(blank11);
 
+	xsa2 = new JTextArea();
+	xsa2.setText("Set Attempts 2");
+	xsa2.setEditable(false);
+	stats1.add(xsa2);
+	blank12 = new JTextArea();
+	blank12.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+	stats1.add(blank12);
+
+	xld = new JTextArea();
+	xld.setText("Libero Digs");
+	xld.setEditable(false);
+	stats1.add(xld);
+	blank13 = new JTextArea();
+	blank13.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+	stats1.add(blank13);
 
 	
 	stats2 = new JPanel();
@@ -139,19 +152,120 @@ public class gui extends JFrame {
 
 	team2 = new JLabel("Team 2");
 	stats2.add(team2);
+
 	yok1 = new JTextArea();
-	yok1.setColumns(20);
-	yok1.setRows(1);
-	yok1.setText("Outside Kills");
+	yok1.setText("Outside Kills 1");
+	yok1.setEditable(false);
 	stats2.add(yok1);
+	blank14 = new JTextArea();
+	blank14.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+	stats2.add(blank14);
 
 	yok2 = new JTextArea();
-	yok2.setColumns(20);
-	yok2.setRows(1);
-	yok2.setText("Outside Kills");
+	yok2.setText("Outside Kills 2");
+	yok2.setEditable(false);
 	stats2.add(yok2);
+	blank15 = new JTextArea();
+	blank15.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+	stats2.add(blank15);
 
+	yoa1 = new JTextArea();
+	yoa1.setText("Outside Kill Attempts 1");
+	yoa1.setEditable(false);
+	stats2.add(yoa1);
+	blank16 = new JTextArea();
+	blank16.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+	stats2.add(blank16);
+
+	yoa2 = new JTextArea();
+	yoa2.setText("Outside Kill Attempts 2");
+	yoa2.setEditable(false);
+	stats2.add(yoa2);
+	blank17 = new JTextArea();
+	blank17.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+	stats2.add(blank17);
+
+	ymk1 = new JTextArea();
+	ymk1.setText("Middle Kills 1");
+	ymk1.setEditable(false);
+	stats2.add(ymk1);
+	blank18 = new JTextArea();
+	blank18.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+	stats2.add(blank18);
+
+	ymk2 = new JTextArea();
+	ymk2.setText("Middle Kills 2");
+	ymk2.setEditable(false);
+	stats2.add(ymk2);
+	blank19 = new JTextArea();
+	blank19.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+	stats2.add(blank19);
 	
+	yma1 = new JTextArea();
+	yma1.setText("Middle Kill Attempts 1");
+	yma1.setEditable(false);
+	stats2.add(yma1);
+	blank20 = new JTextArea();
+	blank20.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+	stats2.add(blank20);
+
+	yma2 = new JTextArea();
+	yma2.setText("Middle Kill Attempts 2");
+	yma2.setEditable(false);
+	stats2.add(yma2);
+	blank21 = new JTextArea();
+	blank21.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+	stats2.add(blank21);
+
+	yss1 = new JTextArea();
+	yss1.setText("Sets per Set 1");
+	yss1.setEditable(false);
+	stats2.add(yss1);
+	blank22 = new JTextArea();
+	blank22.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+	stats2.add(blank22);
+
+	yss2 = new JTextArea();
+	yss2.setText("Sets per Set 2");
+	yss2.setEditable(false);
+	stats2.add(yss2);
+	blank23 = new JTextArea();
+	blank23.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+	stats2.add(blank23);
+
+	ysa1 = new JTextArea();
+	ysa1.setText("Set Attempts 1");
+	ysa1.setEditable(false);
+	stats2.add(ysa1);
+	blank24 = new JTextArea();
+	blank24.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+	stats2.add(blank24);
+
+	ysa2 = new JTextArea();
+	ysa2.setText("Set Attempts 2");
+	ysa2.setEditable(false);
+	stats2.add(ysa2);
+	blank25 = new JTextArea();
+	blank25.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+	stats2.add(blank25);
+
+	yld = new JTextArea();
+	yld.setText("Libero Digs");
+	yld.setEditable(false);
+	stats2.add(yld);
+	blank26 = new JTextArea();
+	blank26.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+	stats2.add(blank26);
+
+	submit = new JButton("Sumbit");
+	volley.add(submit);
+    }
+
+    public void actionPerformed(ActionEvent e) {
+	if (e.getSource() == submit) {
+	    for (int i = 1; i < 27; i++) {
+		if ("blank"
+	}
     }
 
     public static void main(String[] args) {
