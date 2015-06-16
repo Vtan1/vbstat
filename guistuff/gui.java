@@ -20,6 +20,7 @@ public class gui extends JFrame implements ActionListener {
     private JTextArea blank1,blank2,blank3,blank4,blank5,blank6,blank7,blank8,blank9,blank10,blank11,blank12;
     //these blank fields are for the second team
     private JTextArea blank14,blank15,blank16,blank17,blank18,blank19,blank20,blank21,blank22,blank23,blank24,blank25;
+    private JComboBox t1, t2;
     
 
     public gui() {
@@ -242,19 +243,56 @@ public class gui extends JFrame implements ActionListener {
 	blank25.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 	stats2.add(blank25);
 
+	t1 = new JComboBox();
+	t2 = new JComboBox();
+        t1.add("Binghampton");
+	t1.add("BostonCollege");
+	t1.add("BrownUniversity");
+	t1.add("UCLA");
+	t1.add("Columbia");
+	t1.add("Dartmouth");
+	t1.add("Duke");
+	t1.add("Georgetown");
+	t1.add("Harvard");
+	t1.add("NotreDame");
+	t1.add("UPenn");
+	t1.add("Stanford");
+	t1.add("Stonybrook");
+	t1.add("TexasAM");
+	t1.add("Yale");
+	t2.add("Binghampton");
+	t2.add("BostonCollege");
+	t2.add("BrownUniversity");
+	t2.add("UCLA");
+	t2.add("Columbia");
+	t2.add("Dartmouth");
+	t2.add("Duke");
+	t2.add("Georgetown");
+	t2.add("Harvard");
+	t2.add("NotreDame");
+	t2.add("UPenn");
+	t2.add("Stanford");
+	t2.add("Stonybrook");
+	t2.add("TexasAM");
+	t2.add("Yale");
+
+	volley.add(t1);
+	volley.add(t2);
+
 	submit = new JButton("Submit");
 	volley.add(submit);
 
     }
 
+
     public void actionPerformed(ActionEvent e) {
 	if (e.getSource() == submit) {
-	    for (int i = 1; i < 27; i++) {
-		if (("blank" + i)(JTextArea).getText().equals("")) {
+	    // for (int i = 1; i < 27; i++) {
+	    //	if (("blank" + i)(JTextArea).getText().equals("")) {
      		    //error = new JDialog(error,"Error");
 		    //error.setDefaultCloseOperation(EXIT_ON_CLOSE);
-		}
-	    }
+	    //	}
+	    // }
 	}
     }
 
