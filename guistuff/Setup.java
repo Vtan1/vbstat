@@ -20,6 +20,8 @@ public class Setup extends JFrame implements ActionListener {
     //these blank fields are for the second team
     private JTextArea blank14,blank15,blank16,blank17,blank18,blank19,blank20,blank21,blank22,blank23,blank24,blank25;
     private JComboBox t1, t2;
+    private double xoutK1, xoutK2, xoutA1, xoutA2, xmidK1, xmidK2, xmidA1, xmidA2, xmidB1, xmidB2, xsetS, xlibD;
+    private double youtK1, youtK2, youtA1, youtA2, ymidK1, ymidK2, ymidA1, ymidA2, ymidB1, ymidB2, ysetS, ylibD;
     
 
     public Setup() {
@@ -291,6 +293,29 @@ public class Setup extends JFrame implements ActionListener {
 
     }
 
+    private double xoutK1, xoutK2, xoutA1, xoutA2, xmidK1, xmidK2, xmidA1, xmidA2, xmidB1, xmidB2, xsetS, xlibD;
+    private double youtK1, youtK2, youtA1, youtA2, ymidK1, ymidK2, ymidA1, ymidA2, ymidB1, ymidB2, ysetS, ylibD;
+
+    public double getxOutK1() {
+	return xoutK1;
+    }
+    public double getxOutK2() {
+	return xoutK2;
+    }
+    public double getxMidK1() {
+	return xmidK1;
+    }
+    public double getxMidK2() {
+	return xmidK2;
+    }
+    public double getxMidA1() {
+	return xmidA1;
+    }
+    public double getxMidA2() {
+	return xmidA2;
+    }
+
+
 
     public void actionPerformed(ActionEvent e) {
 	errorbox = new JPanel();
@@ -381,12 +406,14 @@ public class Setup extends JFrame implements ActionListener {
 		error.setVisible(true);
 	    }
 	    else {
-		blank1.getText()(int)
+		xoutK1 = Double.parseDouble(blank1.getText());
+	    }
+	    System.out.println(xoutK1);
 	}
     }
 
     public static void main(String[] args) {
 	Setup s = new Setup();
-	Setup.setVisible(true);
+	s.setVisible(true);
     }
 }
