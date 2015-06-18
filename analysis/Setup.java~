@@ -6,7 +6,7 @@ import javax.swing.*;
 import java.io.File;
 
 public class Setup extends JFrame implements ActionListener {
-    private JPanel stats1,stats2, submission, errorbox;
+    private JPanel stats1, stats2, submission, errorbox;
     private Container volley;
     private JDialog error,success;
     private JButton submitC, submitP;
@@ -293,9 +293,6 @@ public class Setup extends JFrame implements ActionListener {
 
     }
 
-    private double xoutK1, xoutK2, xoutA1, xoutA2, xmidK1, xmidK2, xmidA1, xmidA2, xmidB1, xmidB2, xsetS, xlibD;
-    private double youtK1, youtK2, youtA1, youtA2, ymidK1, ymidK2, ymidA1, ymidA2, ymidB1, ymidB2, ysetS, ylibD;
-
     public double getxOutK1() {
 	return xoutK1;
     }
@@ -314,7 +311,48 @@ public class Setup extends JFrame implements ActionListener {
     public double getxMidA2() {
 	return xmidA2;
     }
-
+    public double getxMidB1() {
+	return xmidB1;
+    }
+    public double getxMidB2() {
+	return xmidB2;
+    }
+    public double getxSetS() {
+	return xsetS;
+    }
+    public double getxLibD() {
+	return xlibD;
+    }
+    public double getyOutK1() {
+	return youtK1;
+    }
+    public double getyOutK2() {
+	return youtK2;
+    }
+    public double getyMidK1() {
+	return ymidK1;
+    }
+    public double getyMidK2() {
+	return ymidK2;
+    }
+    public double getyMidA1() {
+	return ymidA1;
+    }
+    public double getyMidA2() {
+	return ymidA2;
+    }
+    public double getyMidB1() {
+	return ymidB1;
+    }
+    public double getyMidB2() {
+	return ymidB2;
+    }
+    public double getySetS() {
+	return ysetS;
+    }
+    public double getyLibD() {
+	return ylibD;
+    }
 
 
     public void actionPerformed(ActionEvent e) {
@@ -407,8 +445,31 @@ public class Setup extends JFrame implements ActionListener {
 	    }
 	    else {
 		xoutK1 = Double.parseDouble(blank1.getText());
+		xoutK2 = Double.parseDouble(blank2.getText());
+		xoutA1 = Double.parseDouble(blank3.getText());
+		xoutA2 = Double.parseDouble(blank4.getText());
+		xmidK1 = Double.parseDouble(blank5.getText());
+		xmidK2 = Double.parseDouble(blank6.getText());
+		xmidA1 = Double.parseDouble(blank7.getText());
+		xmidA2 = Double.parseDouble(blank8.getText());
+		xmidB1 = Double.parseDouble(blank9.getText());
+		xmidB2 = Double.parseDouble(blank10.getText());
+		xsetS = Double.parseDouble(blank11.getText());
+		xlibD = Double.parseDouble(blank12.getText());
+
+		youtK1 = Double.parseDouble(blank14.getText());
+		youtK2 = Double.parseDouble(blank15.getText());
+		youtA1 = Double.parseDouble(blank16.getText());
+		youtA2 = Double.parseDouble(blank17.getText());
+		ymidK1 = Double.parseDouble(blank18.getText());
+		ymidK2 = Double.parseDouble(blank19.getText());
+		ymidA1 = Double.parseDouble(blank20.getText());
+		ymidA2 = Double.parseDouble(blank21.getText());
+		ymidB1 = Double.parseDouble(blank22.getText());
+		ymidB2 = Double.parseDouble(blank23.getText());
+		ysetS = Double.parseDouble(blank24.getText());
+		ylibD = Double.parseDouble(blank25.getText());
 	    }
-	    System.out.println(xoutK1);
 	}
     }
 

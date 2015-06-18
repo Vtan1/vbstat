@@ -1,8 +1,0 @@
-import java.util.*;
-import java.io.*;
-
-public class Compare {
-
-    public double kPer(double k, double at) {
-	return k/at * 100;
-    }
