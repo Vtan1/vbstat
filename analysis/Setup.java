@@ -19,6 +19,7 @@ public class Setup extends JFrame implements ActionListener {
     private JTextArea blank1,blank2,blank3,blank4,blank5,blank6,blank7,blank8,blank9,blank10,blank11,blank12;
     //these blank fields are for the second team
     private JTextArea blank14,blank15,blank16,blank17,blank18,blank19,blank20,blank21,blank22,blank23,blank24,blank25, rok, rokP, rmk, rmkP, rmB, rS, rD;
+    private JTextArea message,message1;
     private JComboBox t1, t2;
     private double xoutK1, xoutK2, xoutA1, xoutA2, xmidK1, xmidK2, xmidA1, xmidA2, xmidB1, xmidB2, xsetS, xlibD, xokP1, xokP2, xmkP1, xmkP2;
     private double youtK1, youtK2, youtA1, youtA2, ymidK1, ymidK2, ymidA1, ymidA2, ymidB1, ymidB2, ysetS, ylibD, yokP1, yokP2, ymkP1, ymkP2;
@@ -26,7 +27,7 @@ public class Setup extends JFrame implements ActionListener {
 
     public Setup() {
 	setTitle("Volleyball Statistics Analysis!");
-	setSize(500,500);
+	setSize(500,600);
 	setLocationRelativeTo(null);
 	setDefaultCloseOperation(EXIT_ON_CLOSE);
 
@@ -246,9 +247,12 @@ public class Setup extends JFrame implements ActionListener {
 	blank25.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 	stats2.add(blank25);
 
+	
+	String[] colleges = {"Binghampton","BostonCollege","BrownUniversity","UCLA","Columbia","Dartmouth","Duke","Georgetown","Harvard","NotreDame","UPenn","Standford","Stonybrook","TexasAM","Yale"};
+
+	t1 = new JComboBox(colleges);
+	t2 = new JComboBox(colleges);
 	/*
-	t1 = new JComboBox();
-	t2 = new JComboBox();
         t1.add("Binghampton");
 	t1.add("BostonCollege");
 	t1.add("BrownUniversity");
@@ -279,10 +283,20 @@ public class Setup extends JFrame implements ActionListener {
 	t2.add("Stonybrook");
 	t2.add("TexasAM");
 	t2.add("Yale");
-
-	volley.add(t1);
-	volley.add(t2);
 	*/
+
+	message = new JTextArea();
+       	message.setText("\n...or you can choose a");
+	message.setEditable(false);
+	stats1.add(message);
+
+	message1 = new JTextArea();
+       	message1.setText("\npre-picked team.");
+	message1.setEditable(false);
+	stats2.add(message1);
+
+	stats1.add(t1);
+	stats2.add(t2);
 
 	submitC = new JButton("Submit custom");
 	submitP = new JButton("Submit pre-picked");
@@ -290,6 +304,7 @@ public class Setup extends JFrame implements ActionListener {
 	submission.add(submitP);
 	volley.add(submission);
 	submitC.addActionListener(this);
+	submitP.addActionListener(this);
 
     }
     /*
@@ -364,9 +379,12 @@ public class Setup extends JFrame implements ActionListener {
 	JTextArea j = new JTextArea("ERROR: Please fill in every field.");
 	j.setEditable(false);
 	errorbox.add(j);
-	error.setContentPane(errorbox);
 	error.setSize(205,40);
+	error.add(errorbox);
+	error.setContentPane(errorbox);
 	error.setLocation(455,410);
+	error.pack();
+
 
 	results = new JPanel();
 	results.setLayout(new BoxLayout(results, BoxLayout.Y_AXIS));
@@ -496,7 +514,7 @@ public class Setup extends JFrame implements ActionListener {
 		if (((xmidK1 + xmidK2) / 2) > ((ymidK1 + ymidK2) / 2)) {
 		    rmk.setText("Team A's middle hitters have an average of " + (((xmidK1 + xmidK2) / 2) - ((ymidK1 + ymidK2) / 2)) + " more kills per game than Team B's.");
 		} else {
-		    rok.setText("Team B's middle hitters have an average of " + (((midK1 + ymidK2) / 2) - ((xmidK1 + xmidK2) / 2)) + " more kills per game than Team A's.");
+		    rok.setText("Team B's middle hitters have an average of " + (((xmidK1 + ymidK2) / 2) - ((xmidK1 + xmidK2) / 2)) + " more kills per game than Team A's.");
 		}
 		results.add(rok);
 		
@@ -507,6 +525,10 @@ public class Setup extends JFrame implements ActionListener {
 		
 		
 	    }
+	} else if (e.getSource () == submitP) {
+	    try {
+		Scanner sc = new Scanner(new File(t1.getSelectedItem().toString() + ".txt"));
+		
 	}
     }
 
