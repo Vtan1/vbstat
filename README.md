@@ -1,5 +1,5 @@
 # vbstat
-This project is intended solely for theoretical purposes and not meant to be used seriously as an analysis tool for volleyball teams.
+This project is intended solely for theoretical purposes and not meant to be used seriously as an analysis tool for volleyball teams. To open, go to the analysis folder and run Setup.java
 
 # Purpose
 To determine a team's chances of winning by using typical statistics gathered in a volleyball game.
