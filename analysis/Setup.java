@@ -284,7 +284,7 @@ public class Setup extends JFrame implements ActionListener {
 	t2.add("TexasAM");
 	t2.add("Yale");
 	*/
-
+	/*
 	message = new JTextArea();
        	message.setText("\n...or you can choose a");
 	message.setEditable(false);
@@ -297,14 +297,14 @@ public class Setup extends JFrame implements ActionListener {
 
 	stats1.add(t1);
 	stats2.add(t2);
-
+	*/
 	submitC = new JButton("Submit custom");
-	submitP = new JButton("Submit pre-picked");
+	//submitP = new JButton("Submit pre-picked");
 	submission.add(submitC);
-	submission.add(submitP);
+	//submission.add(submitP);
 	volley.add(submission);
 	submitC.addActionListener(this);
-	submitP.addActionListener(this);
+	//submitP.addActionListener(this);
 
     }
     /*
@@ -389,9 +389,11 @@ public class Setup extends JFrame implements ActionListener {
 	results = new JPanel();
 	results.setLayout(new BoxLayout(results, BoxLayout.Y_AXIS));
 	success = new JDialog(success, "Results!");
-	success.setContentPane(results);
+	//success.add(results);
 	success.setSize(400,400);
+	success.setContentPane(results);
 	success.setLocation(200,200);
+	//success.pack();
 	if (e.getSource() == submitC) {
 	    if (blank1.getText().equals("")) {
 		error.setVisible(true);
@@ -496,47 +498,80 @@ public class Setup extends JFrame implements ActionListener {
 		ysetS = Double.parseDouble(blank24.getText());
 		ylibD = Double.parseDouble(blank25.getText());
 
-	    }
-	    rok = new JTextArea();
-	    if (((xoutK1 + xoutK2) / 2) > ((youtK1 + youtK2) / 2)) {
-		rok.setText("Team A's outside hitters have an average of " + (((xoutK1 + xoutK2) / 2) - ((youtK1 + youtK2) / 2)) + " more kills per game than Team B's.");
-	    } else {
-		rok.setText("Team B's outside hitters have an average of " + (((youtK1 + youtK2) / 2) - ((xoutK1 + xoutK2) / 2)) + " more kills per game than Team A's.");
-	    }
-	    results.add(rok);
 	    
-	    rokP = new JTextArea();
-	    if ((((xoutK1 / xoutA1) + (xoutK2 / xoutA2)) / 2) > (((youtK1 / youtA1) + (youtK2 / youtA2)) / 2)) {
-		rokP.setText("Team A's outside hitters have a hitting percentage " +  ((((xoutK1 / xoutA1) + (xoutK2 / xoutA2)) / 2) - (((youtK1 / youtA1) + (youtK2 / youtA2)) / 2)) + " higher than Team B's.");
-	    }
+		rok = new JTextArea();
+		if (((xoutK1 + xoutK2) / 2.0) > ((youtK1 + youtK2) / 2.0)) {
+		    rok.setText("Team A's outside hitters have an average of " + (((xoutK1 + xoutK2) / 2.0) - ((youtK1 + youtK2) / 2.0)) + " more kills per game than Team B's.");
+		} else {
+		    rok.setText("Team B's outside hitters have an average of " + (((youtK1 + youtK2) / 2.0) - ((xoutK1 + xoutK2) / 2.0)) + " more kills per game than Team A's.");
+		}
+		rok.setEditable(false);
+		results.add(rok);
+	    
+		rokP = new JTextArea();
+		if ((((xoutK1 / xoutA1) + (xoutK2 / xoutA2)) / 2.0) > (((youtK1 / youtA1) + (youtK2 / youtA2)) / 2.0)) {
+		    rokP.setText("Team A's outside hitters have a hitting percentage " +  ((((xoutK1 / xoutA1) + (xoutK2 / xoutA2)) / 2.0) - (((youtK1 / youtA1) + (youtK2 / youtA2)) / 2.0)) + " percent higher than Team B's.");
+		} else {
+		    rokP.setText("Team B's outside hitters have a hitting percentage " +  ((((youtK1 / youtA1) + (youtK2 / youtA2)) / 2.0) - (((xoutK1 / xoutA1) + (xoutK2 / xoutA2)) / 2.0)) + " percent higher than Team A's.");
+		}
+		rokP.setEditable(false);
+		results.add(rokP);
 			
-	    rmk = new JTextArea();
-	    if (((xmidK1 + xmidK2) / 2) > ((ymidK1 + ymidK2) / 2)) {
-		rmk.setText("Team A's middle hitters have an average of " + (((xmidK1 + xmidK2) / 2) - ((ymidK1 + ymidK2) / 2)) + " more kills per game than Team B's.");
-	    } else {
-		rok.setText("Team B's middle hitters have an average of " + (((midK1 + ymidK2) / 2) - ((xmidK1 + xmidK2) / 2)) + " more kills per game than Team A's.");
-	    }
-	    results.add(rok);
+		rmk = new JTextArea();
+		if (((xmidK1 + xmidK2) / 2.0) > ((ymidK1 + ymidK2) / 2.0)) {
+		    rmk.setText("Team A's middle hitters have an average of " + (((xmidK1 + xmidK2) / 2.0) - ((ymidK1 + ymidK2) / 2.0)) + " more kills per game than Team B's.");
+		} else {
+		    rmk.setText("Team B's middle hitters have an average of " + (((ymidK1 + ymidK2) / 2.0) - ((xmidK1 + xmidK2) / 2.0)) + " more kills per game than Team A's.");
+		}
+		rmk.setEditable(false);
+		results.add(rmk);
 		
-	    rmkP = new JTextArea();
-	    if ((((xmidK1 / xmidA1) + (xmidK2 / xmidA2)) / 2) > (((ymidK1 / ymidA1) + (ymidK2 / ymidA2)) / 2)) {
-		rmkP.setText("Team A's middle hitters have a hitting percentage " +  ((((xmidK1 / xmidA1) + (xmidK2 / xmidA2)) / 2) - (((ymidK1 / ymidA1) + (ymidK2 / ymidA2)) / 2)) + " higher than Team B's.");
-	    }
+		rmkP = new JTextArea();
+		if ((((xmidK1 / xmidA1) + (xmidK2 / xmidA2)) / 2.0) > (((ymidK1 / ymidA1) + (ymidK2 / ymidA2)) / 2.0)) {
+		    rmkP.setText("Team A's middle hitters have a hitting percentage " +  ((((xmidK1 / xmidA1) + (xmidK2 / xmidA2)) / 2.0) - (((ymidK1 / ymidA1) + (ymidK2 / ymidA2)) / 2.0)) + " percent higher than Team B's.");
+		} else {
+		    rmkP.setText("Team B's middle hitters have a hitting percentage " +  ((((ymidK1 / ymidA1) + (xmidK2 / xmidA2)) / 2.0) - (((xmidK1 / xmidA1) + (xmidK2 / xmidA2)) / 2.0)) + " percent higher than Team A's.");
+		}
+		rmkP.setEditable(false);
+		results.add(rmkP);
 
-	    rS = new JTextArea();
-	    if (xsetS > ysetS) {
-		rok.setText("Team A's setter has an average of " + (((xoutK1 + xoutK2) / 2) - ((youtK1 + youtK2) / 2)) + " more kills per game than Team B's.");
-	    } else {
-		rok.setText("Team B's outside hitters have an average of " + (((youtK1 + youtK2) / 2) - ((xoutK1 + xoutK2) / 2)) + " more kills per game than Team A's.");
-	    }
-	    results.add(rok);
+		rmB = new JTextArea();
+		if (((xmidB1 + xmidB2) / 2.0) > ((ymidB1 + ymidB2) / 2.0)) {
+		    rmB.setText("Team A's middle hitters have an average of " + (((xmidB1 + xmidB2) / 2.0) - ((ymidB1 + ymidB2) / 2.0)) + " more blocks per game than Team B's.");
+		} else {
+		    rmB.setText("Team B's middle hitters have an average of " + (((ymidB1 + ymidB2) / 2.0) - ((xmidB1 + xmidB2) / 2.0)) + " more blocks per game than Team A's.");
+		}
+		rmB.setEditable(false);
+		results.add(rmB);
+
+		rS = new JTextArea();
+		if (xsetS > ysetS) {
+		    rS.setText("Team A's setter has an average of " + (xsetS - ysetS) + " more sets per game than Team B's.");
+		} else {
+		    rS.setText("Team B's setter has an average of " + (ysetS - xsetS) + " more sets per game than Team A's.");
+		}
+		rS.setEditable(false);
+		results.add(rS);
+
+		rD = new JTextArea();
+		if (xlibD > ylibD) {
+		    rD.setText("Team A's libero has an average of " + (xlibD - ylibD) + " more digs per game than Team B's.");
+		} else {
+		    rD.setText("Team B's libero has an average of " + (ylibD - xlibD) + " more digs per game than Team A's.");
+		}
+		rD.setEditable(false);
+		results.add(rD);
 	    
+		success.setVisible(true);
+		success.pack();
+	    }
 
 	} else if (e.getSource () == submitP) {
 	    try {
 		Scanner sc = new Scanner(new File(t1.getSelectedItem().toString() + ".txt"));
-		
-	    }
+		Scanner sc1 = new Scanner(new File(t2.getSelectedItem().toString() + ".txt"));
+	    } catch (Exception u) {}
+	    
 	}
     }
 
